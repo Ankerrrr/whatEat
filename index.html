@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>whatEat</title>
+    <meta
+      name="description"
+      content="”不知道要吃甚麼東西嗎，抽就對了，齁尾人的吃飯幫手”"
+    />
+    <meta name="theme-color" content="#cdbc01" />
+    <meta name="author" content="AnkeHuang" />
+    <meta
+      name="keywords"
+      content="抽籤,轉盤,覓食,雲林,虎尾科技大學,虎尾,食物"
+      ,
+    />
+    <!-- icon -->
+    <link rel="icon" href="./Icons/av66l-nyznt-001.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./Icons/av66l-nyznt-001.ico" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <!-- googleFont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- googleAd -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1499323722677786"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <img
+      class="backgroundImages"
+      src="./images/food.jpg"
+      alt="backGroundImage"
+      draggable="false"
+    />
+    <header>
+      <nav>
+        <ul>
+          <li><a id="setfoodPage" class="active">設定食物</a></li>
+          <li><a id="luckyPage">抽吃啥</a></li>
+        </ul>
+      </nav>
+      <p>不知道要吃啥嗎 <br />抽就對了!</p>
+    </header>
+    <main>
+      <section class="foodSection">
+        <div class="foodSectionLeftDiv" id="foodSectionLeftDiv">
+          <h3>快速選項</h3>
+          <p
+            title="平價"
+            id="lowPrice"
+            class="foodSectionLeftBt"
+            style="background-color: #62698f"
+          >
+            <i class="fa-regular fa-money-bill-1" style="color: #8ce5a4"></i>
+            平價
+          </p>
+          <p
+            title="高價"
+            id="midPrice"
+            class="foodSectionLeftBt"
+            style="background-color: #253916"
+          >
+            <i class="fa-solid fa-money-bill-1" style="color: #65d067"></i> 高價
+          </p>
+          <p
+            title="奢華"
+            id="highPrice"
+            class="foodSectionLeftBt"
+            style="background-color: #6e12bd"
+          >
+            <i class="fa-solid fa-money-bills" style="color: #5f8d2d"></i> 奢華
+          </p>
+          <p
+            title="早餐"
+            id="breakfast"
+            class="foodSectionLeftBt"
+            style="background-color: #ff4966"
+          >
+            <i class="fa-solid fa-bacon" style="color: #ffb11e"></i> 早餐
+          </p>
+          <p
+            title="消夜"
+            id="nightFood"
+            class="foodSectionLeftBt"
+            style="background-color: #4944b8"
+          >
+            <i class="fa-solid fa-biohazard" style="color: #55eeae"></i> 蕭夜
+          </p>
+          <p
+            title="飲料"
+            id="drink"
+            class="foodSectionLeftBt"
+            style="background-color: #124654"
+          >
+            <i class="fa-solid fa-whiskey-glass" style="color: #f8b251"></i>
+            飲料
+          </p>
+        </div>
+        <div id="foodSection" class="addFood" style="display: block">
+          <form action="" method="POST">
+            <div class="buttonDiv">
+              <button
+                title="增加列"
+                id="addcolumn"
+                class="add bt"
+                type="button"
+              >
+                增加列
+              </button>
+              <button title="送出" id="submit" type="submit" class="bt">
+                送出
+              </button>
+
+              <div class="showMoreDiv">
+                <p class="showList" id="showMoreButton">
+                  <i
+                    class="fa-solid fa-caret-down fa-2xl"
+                    style="color: #ffd43b"
+                  ></i>
+                  更多
+                </p>
+                <div id="moreMenu" class="moreMenu hidden">
+                  <p class="menu-item" id="deleteAllInputBt">刪除全部</p>
+                  <p class="menu-item" id="googleMapBt">使用GOOGLE地圖導入</p>
+                </div>
+              </div>
+            </div>
+            <div id="addFoodDiv">
+              <div class="InputContainer">
+                <button title="刪除" class="delete" id="deleteBt" type="button">
+                  X
+                </button>
+                <input
+                  id="inputContainer"
+                  type="text"
+                  name="food"
+                  placeholder="請輸入餐廳"
+                  required="required"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="luckySection" class="luckyPage" style="display: none">
+        <div class="ansDiv">
+          <h3>幸運轉盤:</h3>
+          <div>
+            <p id="ans" class="noneSpinner">???</p>
+          </div>
+          <button title="旋轉我" id="spinnerBt">旋轉我</button>
+        </div>
+        <div class="foodListDiv">
+          <h3 id="showListH3">
+            <i class="fa-solid fa-circle-info" style="color: #ffd43b"></i>
+            內容:
+          </h3>
+          <p id="foodListP"></p>
+        </div>
+      </section>
+    </main>
+    <section id="alertSection" class="signSection">
+      <div class="sign">
+        <h3>
+          你保證你們會尊重轉盤，不反悔嗎<i
+            class="fa-solid fa-question fa"
+            id="alertIcon"
+            style="color: #ff0000"
+          ></i>
+        </h3>
+        <p>違反轉盤規定可依隊長任意處分</p>
+        <div>
+          <button id="noRespect">我不同意</button>
+          <button id="Respect">同意</button>
+        </div>
+      </div>
+    </section>
+    <footer id="footer">
+      <section class="logo">
+        <h1 id="footerH1">whatEat?</h1>
+        <p id="authorPtag">●點子鬼:黃鬼蛋 ●DesignedBy:anke</p>
+      </section>
+    </footer>
+    <script src="app.js"></script>
+    <!-- headerRoom -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.12.0/headroom.min.js"
+      integrity="sha512-9UsrKTYzS9smDm2E58MLs0ACtOki+UC4bBq4iK5wi7lJycwqcaiHxr1bdEsIVoK0l5STEzLUdYyDdFQ5OEjczw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- sweetalert -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-0CVESGS7TF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-0CVESGS7TF");
+    </script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1499323722677786"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

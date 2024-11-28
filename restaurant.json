@@ -1,0 +1,105 @@
+{
+  "便宜": [
+    { "name": "魯大王", "url": "https://example.com/lu-da-wang.jpg" },
+    { "name": "鮮如美", "url": "https://example.com/xian-ru-mei.jpg" },
+    { "name": "鹿島", "url": "https://example.com/lu-jima.jpg" },
+    { "name": "八哥", "url": "https://example.com/ba-ge.jpg" },
+    { "name": "i珍食", "url": "https://example.com/i-zhen-shi.jpg" },
+    {
+      "name": "藤原壽司",
+      "url": "https://example.com/teng-yuan-shou-si.jpg"
+    },
+    { "name": "大吉祥", "url": "https://example.com/da-ji-xiang.jpg" },
+    { "name": "奇雞", "url": "https://example.com/qi-ji.jpg" },
+    { "name": "四維街", "url": "https://example.com/si-wei-jie.jpg" },
+    { "name": "深深小吃", "url": "https://example.com/si-wei-jie.jpg" },
+    {
+      "name": "八方雲集",
+      "url": "https://example.com/ba-fang-yun-ji.jpg"
+    },
+    {
+      "name": "雲谷牛和",
+      "url": "https://example.com/yun-gu-niu-he.jpg"
+    },
+    {
+      "name": "天勝炒飯",
+      "url": "https://example.com/tian-sheng-chao-fan.jpg"
+    },
+    { "name": "野獸派", "url": "https://example.com/ye-shou-pai.jpg" }
+  ],
+  "假日": [
+    { "name": "孫東寶", "url": "https://example.com/sun-dong-bao.jpg" },
+    { "name": "熱鍋", "url": "https://example.com/re-guo.jpg" },
+    { "name": "螺絲粉", "url": "https://example.com/luo-si-fen.jpg" },
+    {
+      "name": "一江拉麵",
+      "url": "https://example.com/yi-jiang-la-mian.jpg"
+    },
+    { "name": "夜市(不限)", "url": "https://example.com/ye-shi.jpg" },
+    { "name": "藏壽司", "url": "https://example.com/shou-si-lang.jpg" }
+  ],
+  "奢華": [
+    { "name": "野川堂", "url": "https://example.com/ye-chuan-tang.jpg" },
+    {
+      "name": "色鼎燒肉",
+      "url": "https://example.com/se-ding-shao-rou.jpg"
+    },
+    { "name": "3國傳", "url": "https://example.com/3-guo-chuan.jpg" },
+    {
+      "name": "石頭燒肉",
+      "url": "https://example.com/shi-tou-shao-rou.jpg"
+    },
+    { "name": "葉問", "url": "https://example.com/ye-wen.jpg" },
+    { "name": "一畝", "url": "https://example.com/yi-fu.jpg" }
+  ],
+  "早餐": [
+    { "name": "1817", "url": "https://example.com/ye-chuan-tang.jpg" },
+    {
+      "name": "浪嶼",
+      "url": "https://example.com/se-ding-shao-rou.jpg"
+    },
+    { "name": "M.R.渣燈", "url": "https://example.com/3-guo-chuan.jpg" },
+    {
+      "name": "史丹利",
+      "url": "https://example.com/shi-tou-shao-rou.jpg"
+    },
+    { "name": "L.S(烙賽)", "url": "https://example.com/ye-wen.jpg" },
+    { "name": "早安山丘", "url": "https://example.com/yi-fu.jpg" }
+  ],
+  "消夜": [
+    { "name": "碳烤雞排", "url": "https://example.com/ye-chuan-tang.jpg" },
+    {
+      "name": "台灣第一家鹹酥雞",
+      "url": "https://example.com/se-ding-shao-rou.jpg"
+    },
+    { "name": "永和豆漿", "url": "https://example.com/3-guo-chuan.jpg" },
+    {
+      "name": "7-11",
+      "url": "https://example.com/shi-tou-shao-rou.jpg"
+    }
+  ],
+  "飲料幫": [
+    { "name": "50嵐", "url": "https://example.com/50-lan.jpg" },
+    { "name": "迷克夏", "url": "https://example.com/mi-ke-xia.jpg" },
+    { "name": "得正", "url": "https://example.com/de-zheng.jpg" },
+    { "name": "清心", "url": "https://example.com/qing-xin.jpg" },
+    { "name": "老賴", "url": "https://example.com/lao-lai.jpg" },
+    {
+      "name": "雙十八木",
+      "url": "https://example.com/shuang-shi-ba-mu.jpg"
+    },
+    { "name": "一沐日", "url": "https://example.com/yi-mu-ri.jpg" },
+    { "name": "珍煮丹", "url": "https://example.com/zhen-zhu-dan.jpg" },
+    {
+      "name": "不一樣的珍珠奶茶",
+      "url": "https://example.com/zhen-zhu-dan.jpg"
+    },
+    {
+      "name": "Drink store",
+      "url": "https://example.com/drink-store.jpg"
+    },
+    { "name": "19茶屋", "url": "https://example.com/19-cha-wu.jpg" },
+    { "name": "星巴克", "url": "https://example.com/starbucks.jpg" },
+    { "name": "茶王", "url": "https://example.com/cha-wang.jpg" }
+  ]
+}

@@ -1,0 +1,658 @@
+$hovercolor: rgb(205, 188, 1);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none; /* standard syntax */
+  -webkit-user-select: none; /* for Chrome、Safari */
+  -moz-user-select: none; /* for Mozilla、Firefox */
+  font-family: "Noto Sans TC";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+body {
+  img.backgroundImages {
+    position: fixed;
+    z-index: -5;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    filter: brightness(20%);
+    overflow: hidden;
+  }
+  header {
+    background-color: rgba(0, 0, 0, 0.654);
+    padding: 1rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    box-shadow: 10px 2px 2px black;
+    p {
+      color: rgb(255, 255, 255);
+      font-size: 1.1rem;
+      &:hover {
+        animation: HeaderH1OutAnimate 0.1s ease-in both;
+      }
+      animation: HeaderH1InAnimate 0.3s ease-out both;
+    }
+  }
+  nav {
+    flex: 3 1 400px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      list-style-type: none;
+      li {
+        padding: 0.5rem 0.5rem;
+        a {
+          text-decoration: none;
+          color: rgb(255, 255, 255);
+          font-size: 1.5rem;
+          &.active {
+            background-color: rgba(157, 157, 157, 0.495);
+            border-bottom: 3px solid $hovercolor;
+          }
+          &:hover {
+            color: $hovercolor;
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    section {
+      display: flex;
+      flex-wrap: wrap;
+      div.foodSectionLeftDiv {
+        position: absolute;
+        left: 0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(45, 34, 0, 0.452);
+        border-radius: 5%;
+        h3 {
+          color: #ffff00;
+          background-color: rgb(41, 41, 41);
+          border-radius: 10%;
+          font-weight: bolder;
+          font-size: 1.8rem;
+          margin-top: 1rem;
+        }
+        p.foodSectionLeftBt {
+          text-align: center;
+          padding: 1rem 0rem;
+          margin: 0.5rem;
+          border-radius: 5%;
+          width: 10vw;
+          font-size: 1.8rem;
+          color: white;
+          &.selectBt {
+            box-shadow: 0px 2px 10px 5px #ece50f91;
+            color: #bab6b6;
+          }
+        }
+      }
+      div.addFood {
+        flex: 15 1 700px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        form {
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          div.buttonDiv {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            button.bt {
+              border: 0;
+              border-radius: 5px;
+              background-color: #ad1457;
+              color: white;
+              font-size: 1.2rem;
+              width: 10vw;
+              height: 5vh;
+              margin: 1rem 2rem;
+              &:hover {
+                background-color: #880e4f;
+              }
+              &.add {
+                background-color: #2e7d32;
+                &:hover {
+                  background-color: #1b5e20;
+                }
+              }
+            }
+            div.showMoreDiv {
+              position: relative;
+              p.showList {
+                position: relative;
+                text-align: center;
+                border: 0;
+                border-radius: 5px;
+                background-color: #4d3800;
+                color: rgb(255, 255, 255);
+                font-size: 1.2rem;
+                width: 8vw;
+                height: 4%;
+                margin: 1rem 2rem;
+                &:hover {
+                  background-color: #342600;
+                }
+              }
+              .moreMenu {
+                position: absolute;
+                background-color: #fff;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                padding: 0.31rem;
+                z-index: 1000;
+                display: none;
+                &.hidden {
+                  display: none;
+                }
+                &.visible {
+                  display: block;
+                }
+                .menu-item {
+                  padding: 0.5rem 1rem;
+                  cursor: pointer;
+                  background-color: #f0f0f0;
+                }
+                .menu-item:hover {
+                  background-color: #bb9f00;
+                }
+              }
+            }
+          }
+          div {
+            display: flex;
+            flex-direction: column;
+            div.animate {
+              animation: animate 0.1s ease-in both;
+            }
+            div.reverse {
+              animation: reverseAnimate 0.1s ease-out both;
+            }
+            div.InputContainer {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              margin-top: 0.3rem;
+              button.delete {
+                width: 3vw;
+                height: 66px;
+                background-color: red;
+                color: black;
+                font-weight: bolder;
+                border: 0;
+                border-radius: 5%;
+                font-size: 1.8rem;
+                &:hover {
+                  background-color: darkred;
+                  border-bottom: 3px solid darkred;
+                }
+              }
+            }
+            input {
+              height: 3vh;
+              outline-style: none;
+              border-radius: 1%;
+              border: 0;
+              width: 40vw;
+              font-weight: 700;
+              font-size: 1.5rem;
+              padding: 2rem 0rem;
+              background-color: rgb(255, 255, 255);
+              text-align: center;
+              &:focus {
+                border-color: rgba(188, 0, 0, 0.947);
+                outline: 0;
+                box-shadow: inset 0 1px 1px rgba(188, 0, 0, 0.947),
+                  0 0 8px rgba(188, 0, 0, 0.947);
+              }
+            }
+          }
+        }
+        margin-bottom: 3rem;
+      }
+    }
+
+    section.luckyPage {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      div.ansDiv {
+        background-color: rgba(0, 0, 0, 0.421);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        h3 {
+          font-size: 2rem;
+          color: aliceblue;
+        }
+        div {
+          padding: 7rem 0rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          p {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            color: rgb(255, 200, 0);
+            font-size: 3rem;
+            &:hover {
+              color: rgb(157, 123, 2);
+            }
+            &.noneSpinner {
+              color: rgb(255, 255, 255);
+            }
+          }
+        }
+        button {
+          border: 0;
+          border-radius: 5px;
+          background-color: rgb(253, 216, 53);
+          color: rgb(0, 0, 0);
+          font-weight: bolder;
+          font-size: 1.4rem;
+          width: 40vw;
+          height: 8vh;
+          margin: 1rem 0rem;
+          &:hover {
+            background-color: rgb(137, 30, 30);
+            font-size: 2rem;
+          }
+        }
+      }
+      div.foodListDiv {
+        width: 100%;
+        display: flex;
+        align-self: flex-start;
+        padding: 1rem 1rem;
+        flex-direction: column;
+        align-items: start;
+        justify-content: left;
+        background-color: rgba(0, 0, 0, 0.421);
+        padding: 0rem 1rem;
+        h3 {
+          color: white;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+        p {
+          display: inline;
+          flex-direction: column;
+          color: darkgoldenrod;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  section.signSection {
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    div.sign {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      h3 {
+        color: red;
+        font-size: 3rem;
+        background-color: rgb(45, 45, 45);
+        text-align: center;
+      }
+      p {
+        color: rgb(201, 2, 2);
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+
+        button#noRespect {
+          flex: 2 1 200px;
+          border: 0;
+          border-radius: 5px;
+          background-color: rgb(193, 3, 63);
+          color: white;
+          font-size: 1.5rem;
+          width: 20vw;
+          height: 5vh;
+          margin: 0.3rem;
+          &:hover {
+            border-bottom: 3px solid rgb(100, 1, 32);
+          }
+        }
+        button#Respect {
+          flex: 2 1 200px;
+          border: 0;
+          border-radius: 5px;
+          background-color: rgb(13, 133, 0);
+          color: white;
+          font-size: 1.5rem;
+          width: 20vw;
+          height: 5vh;
+          margin: 0.3rem;
+          &:hover {
+            border-bottom: 3px solid rgb(6, 59, 0);
+          }
+        }
+      }
+    }
+  }
+  footer {
+    background-color: rgba(191, 54, 12, 0.956);
+    position: fixed;
+    bottom: 0;
+    left: 0px;
+    width: 100%;
+    animation: footerInAnimate 0.1s ease-In both;
+    z-index: 8;
+    &.hide {
+      display: none;
+    }
+    section.logo {
+      display: flex;
+      flex-wrap: wrap;
+      h1 {
+        flex: 15 1 700px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        color: rgb(231, 231, 231);
+        font-size: 1.3rem;
+
+        &:hover {
+          color: rgb(238, 255, 0);
+        }
+      }
+      h1.footerH1Out {
+        animation: footerH1OutAnimate 0.3s ease-in-out both;
+      }
+      p {
+        position: absolute;
+        right: 0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: wheat;
+        animation: authorClickOut 0.1s ease-out both;
+        &.click {
+          animation: authorClick 0.3s ease-in both;
+          scale: 110%;
+          color: rgb(249, 162, 0);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  main {
+    section.foodSection {
+      div.foodSectionLeftDiv {
+        h3 {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+        p.foodSectionLeftBt {
+          width: 23vw;
+          font-size: 1.4rem;
+        }
+      }
+      div.addFood {
+        form {
+          div.buttonDiv {
+            button.bt {
+              height: 9%;
+            }
+            #addcolumn {
+              margin-left: 100px;
+            }
+            #showMoreButton {
+              margin-left: 0.5rem;
+              width: 70%;
+            }
+          }
+          div {
+            div.InputContainer {
+              margin-left: 2rem;
+              button.delete {
+                width: 10vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    header {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      nav {
+        ul {
+          flex-direction: column;
+          li {
+            padding: 0.5rem 0.25rem;
+          }
+        }
+      }
+      p {
+        padding-top: 1rem;
+        vertical-align: middle;
+      }
+    }
+
+    main {
+      section.foodSection {
+        div.foodSectionLeftDiv {
+          h3 {
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+          p.foodSectionLeftBt {
+            width: 23vw;
+            font-size: 1.4rem;
+          }
+        }
+        div.addFood {
+          form {
+            div.buttonDiv {
+              button.bt {
+                margin: 0.5rem;
+                width: 20vw;
+              }
+              #addcolumn {
+                margin-left: 100px;
+              }
+              #showMoreButton {
+                margin-left: 0.5rem;
+                width: 70%;
+              }
+            }
+            div {
+              div.InputContainer {
+                margin-left: 2rem;
+                button.delete {
+                  width: 10vw;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    section.signSection {
+      background-color: black;
+      // div.sign {
+      //   // p {
+      //   //   text-align: center;
+      //   //   font-size: 2.5rem;
+      //   // }
+      //   // button#noRespect {
+      //   //   height: 8vh;
+      //   //   width: 50vw;
+      //   // }
+      //   // button#Respect {
+      //   //   height: 8vh;
+      //   //   width: 50vw;
+      //   // }
+      // }
+    }
+    footer {
+      section.logo {
+        p {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@keyframes animate {
+  from {
+    z-index: -1;
+    transform: translate(0%, -10%);
+    opacity: 0.4;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
+
+@keyframes reverseAnimate {
+  from {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  to {
+    transform: translate(0%, -20%);
+    opacity: 0;
+    z-index: -10;
+  }
+}
+
+@keyframes footerInAnimate {
+  from {
+    opacity: 0.4;
+    transform: translate(0%, 10%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes footerH1OutAnimate {
+  from {
+    transform: translate(0%, 40%);
+    scale: 40%;
+  }
+  to {
+    transform: translate(0%, 0%);
+    scale: 100%;
+  }
+}
+
+@keyframes footerH1OutAnimate {
+  from {
+    transform: translate(0%, 40%);
+    scale: 40%;
+  }
+  to {
+    transform: translate(0%, 0%);
+    scale: 100%;
+  }
+}
+
+@keyframes HeaderH1OutAnimate {
+  from {
+    transform: translate(0%, 0%);
+    scale: 100%;
+  }
+  to {
+    transform: translate(0%, 10%);
+    scale: 110%;
+  }
+}
+
+@keyframes HeaderH1InAnimate {
+  from {
+    transform: translate(0%, 10%);
+    scale: 110%;
+  }
+  to {
+    transform: translate(0%, 0%);
+    scale: 100%;
+  }
+}
+
+@keyframes authorClick {
+  from {
+    scale: 100%;
+  }
+  to {
+    scale: 110%;
+  }
+}
+
+@keyframes authorClickOut {
+  from {
+    scale: 110%;
+  }
+  to {
+    scale: 100%;
+  }
+}

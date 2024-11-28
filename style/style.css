@@ -1,0 +1,588 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none; /* standard syntax */
+  -webkit-user-select: none; /* for Chrome、Safari */
+  -moz-user-select: none; /* for Mozilla、Firefox */
+  font-family: "Noto Sans TC";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+body img.backgroundImages {
+  position: fixed;
+  z-index: -5;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(20%);
+  overflow: hidden;
+}
+body header {
+  background-color: rgba(0, 0, 0, 0.654);
+  padding: 1rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  box-shadow: 10px 2px 2px black;
+}
+body header p {
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  animation: HeaderH1InAnimate 0.3s ease-out both;
+}
+body header p:hover {
+  animation: HeaderH1OutAnimate 0.1s ease-in both;
+}
+body nav {
+  flex: 3 1 400px;
+}
+body nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  list-style-type: none;
+}
+body nav ul li {
+  padding: 0.5rem 0.5rem;
+}
+body nav ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+}
+body nav ul li a.active {
+  background-color: rgba(157, 157, 157, 0.495);
+  border-bottom: 3px solid rgb(205, 188, 1);
+}
+body nav ul li a:hover {
+  color: rgb(205, 188, 1);
+}
+body main section {
+  display: flex;
+  flex-wrap: wrap;
+}
+body main section div.foodSectionLeftDiv {
+  position: absolute;
+  left: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(45, 34, 0, 0.452);
+  border-radius: 5%;
+}
+body main section div.foodSectionLeftDiv h3 {
+  color: #ffff00;
+  background-color: rgb(41, 41, 41);
+  border-radius: 10%;
+  font-weight: bolder;
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}
+body main section div.foodSectionLeftDiv p.foodSectionLeftBt {
+  text-align: center;
+  padding: 1rem 0rem;
+  margin: 0.5rem;
+  border-radius: 5%;
+  width: 10vw;
+  font-size: 1.8rem;
+  color: white;
+}
+body main section div.foodSectionLeftDiv p.foodSectionLeftBt.selectBt {
+  box-shadow: 0px 2px 10px 5px rgba(236, 229, 15, 0.568627451);
+  color: #bab6b6;
+}
+body main section div.addFood {
+  flex: 15 1 700px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-bottom: 3rem;
+}
+body main section div.addFood form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body main section div.addFood form div.buttonDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body main section div.addFood form div.buttonDiv button.bt {
+  border: 0;
+  border-radius: 5px;
+  background-color: #ad1457;
+  color: white;
+  font-size: 1.2rem;
+  width: 10vw;
+  height: 5vh;
+  margin: 1rem 2rem;
+}
+body main section div.addFood form div.buttonDiv button.bt:hover {
+  background-color: #880e4f;
+}
+body main section div.addFood form div.buttonDiv button.bt.add {
+  background-color: #2e7d32;
+}
+body main section div.addFood form div.buttonDiv button.bt.add:hover {
+  background-color: #1b5e20;
+}
+body main section div.addFood form div.buttonDiv div.showMoreDiv {
+  position: relative;
+}
+body main section div.addFood form div.buttonDiv div.showMoreDiv p.showList {
+  position: relative;
+  text-align: center;
+  border: 0;
+  border-radius: 5px;
+  background-color: #4d3800;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  width: 8vw;
+  height: 4%;
+  margin: 1rem 2rem;
+}
+body main section div.addFood form div.buttonDiv div.showMoreDiv p.showList:hover {
+  background-color: #342600;
+}
+body main section div.addFood form div.buttonDiv div.showMoreDiv .moreMenu {
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 0.31rem;
+  z-index: 1000;
+  display: none;
+}
+body main section div.addFood form div.buttonDiv div.showMoreDiv .moreMenu.hidden {
+  display: none;
+}
+body main section div.addFood form div.buttonDiv div.showMoreDiv .moreMenu.visible {
+  display: block;
+}
+body main section div.addFood form div.buttonDiv div.showMoreDiv .moreMenu .menu-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  background-color: #f0f0f0;
+}
+body main section div.addFood form div.buttonDiv div.showMoreDiv .moreMenu .menu-item:hover {
+  background-color: #bb9f00;
+}
+body main section div.addFood form div {
+  display: flex;
+  flex-direction: column;
+}
+body main section div.addFood form div div.animate {
+  animation: animate 0.1s ease-in both;
+}
+body main section div.addFood form div div.reverse {
+  animation: reverseAnimate 0.1s ease-out both;
+}
+body main section div.addFood form div div.InputContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+body main section div.addFood form div div.InputContainer button.delete {
+  width: 3vw;
+  height: 66px;
+  background-color: red;
+  color: black;
+  font-weight: bolder;
+  border: 0;
+  border-radius: 5%;
+  font-size: 1.8rem;
+}
+body main section div.addFood form div div.InputContainer button.delete:hover {
+  background-color: darkred;
+  border-bottom: 3px solid darkred;
+}
+body main section div.addFood form div input {
+  height: 3vh;
+  outline-style: none;
+  border-radius: 1%;
+  border: 0;
+  width: 40vw;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding: 2rem 0rem;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+}
+body main section div.addFood form div input:focus {
+  border-color: rgba(188, 0, 0, 0.947);
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(188, 0, 0, 0.947), 0 0 8px rgba(188, 0, 0, 0.947);
+}
+body main section.luckyPage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+body main section.luckyPage div.ansDiv {
+  background-color: rgba(0, 0, 0, 0.421);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body main section.luckyPage div.ansDiv h3 {
+  font-size: 2rem;
+  color: aliceblue;
+}
+body main section.luckyPage div.ansDiv div {
+  padding: 7rem 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main section.luckyPage div.ansDiv div p {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: rgb(255, 200, 0);
+  font-size: 3rem;
+}
+body main section.luckyPage div.ansDiv div p:hover {
+  color: rgb(157, 123, 2);
+}
+body main section.luckyPage div.ansDiv div p.noneSpinner {
+  color: rgb(255, 255, 255);
+}
+body main section.luckyPage div.ansDiv button {
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(253, 216, 53);
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  font-size: 1.4rem;
+  width: 40vw;
+  height: 8vh;
+  margin: 1rem 0rem;
+}
+body main section.luckyPage div.ansDiv button:hover {
+  background-color: rgb(137, 30, 30);
+  font-size: 2rem;
+}
+body main section.luckyPage div.foodListDiv {
+  width: 100%;
+  display: flex;
+  align-self: flex-start;
+  padding: 1rem 1rem;
+  flex-direction: column;
+  align-items: start;
+  justify-content: left;
+  background-color: rgba(0, 0, 0, 0.421);
+  padding: 0rem 1rem;
+}
+body main section.luckyPage div.foodListDiv h3 {
+  color: white;
+}
+body main section.luckyPage div.foodListDiv h3:hover {
+  transform: scale(1.1);
+}
+body main section.luckyPage div.foodListDiv p {
+  display: inline;
+  flex-direction: column;
+  color: darkgoldenrod;
+  font-size: 1.5rem;
+}
+body section.signSection {
+  background-color: rgba(0, 0, 0, 0.95);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+body section.signSection div.sign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body section.signSection div.sign h3 {
+  color: red;
+  font-size: 3rem;
+  background-color: rgb(45, 45, 45);
+  text-align: center;
+}
+body section.signSection div.sign p {
+  color: rgb(201, 2, 2);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+body section.signSection div.sign div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+body section.signSection div.sign div button#noRespect {
+  flex: 2 1 200px;
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(193, 3, 63);
+  color: white;
+  font-size: 1.5rem;
+  width: 20vw;
+  height: 5vh;
+  margin: 0.3rem;
+}
+body section.signSection div.sign div button#noRespect:hover {
+  border-bottom: 3px solid rgb(100, 1, 32);
+}
+body section.signSection div.sign div button#Respect {
+  flex: 2 1 200px;
+  border: 0;
+  border-radius: 5px;
+  background-color: rgb(13, 133, 0);
+  color: white;
+  font-size: 1.5rem;
+  width: 20vw;
+  height: 5vh;
+  margin: 0.3rem;
+}
+body section.signSection div.sign div button#Respect:hover {
+  border-bottom: 3px solid rgb(6, 59, 0);
+}
+body footer {
+  background-color: rgba(191, 54, 12, 0.956);
+  position: fixed;
+  bottom: 0;
+  left: 0px;
+  width: 100%;
+  animation: footerInAnimate 0.1s ease-In both;
+  z-index: 8;
+}
+body footer.hide {
+  display: none;
+}
+body footer section.logo {
+  display: flex;
+  flex-wrap: wrap;
+}
+body footer section.logo h1 {
+  flex: 15 1 700px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  color: rgb(231, 231, 231);
+  font-size: 1.3rem;
+}
+body footer section.logo h1:hover {
+  color: rgb(238, 255, 0);
+}
+body footer section.logo h1.footerH1Out {
+  animation: footerH1OutAnimate 0.3s ease-in-out both;
+}
+body footer section.logo p {
+  position: absolute;
+  right: 0%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+  animation: authorClickOut 0.1s ease-out both;
+}
+body footer section.logo p.click {
+  animation: authorClick 0.3s ease-in both;
+  scale: 110%;
+  color: rgb(249, 162, 0);
+}
+
+@media screen and (min-width: 601px) and (max-width: 1000px) {
+  main section.foodSection div.foodSectionLeftDiv h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  main section.foodSection div.foodSectionLeftDiv p.foodSectionLeftBt {
+    width: 23vw;
+    font-size: 1.4rem;
+  }
+  main section.foodSection div.addFood form div.buttonDiv button.bt {
+    height: 9%;
+  }
+  main section.foodSection div.addFood form div.buttonDiv #addcolumn {
+    margin-left: 100px;
+  }
+  main section.foodSection div.addFood form div.buttonDiv #showMoreButton {
+    margin-left: 0.5rem;
+    width: 70%;
+  }
+  main section.foodSection div.addFood form div div.InputContainer {
+    margin-left: 2rem;
+  }
+  main section.foodSection div.addFood form div div.InputContainer button.delete {
+    width: 10vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  body header {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  body header nav ul {
+    flex-direction: column;
+  }
+  body header nav ul li {
+    padding: 0.5rem 0.25rem;
+  }
+  body header p {
+    padding-top: 1rem;
+    vertical-align: middle;
+  }
+  body main section.foodSection div.foodSectionLeftDiv h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  body main section.foodSection div.foodSectionLeftDiv p.foodSectionLeftBt {
+    width: 23vw;
+    font-size: 1.4rem;
+  }
+  body main section.foodSection div.addFood form div.buttonDiv button.bt {
+    margin: 0.5rem;
+    width: 20vw;
+  }
+  body main section.foodSection div.addFood form div.buttonDiv #addcolumn {
+    margin-left: 100px;
+  }
+  body main section.foodSection div.addFood form div.buttonDiv #showMoreButton {
+    margin-left: 0.5rem;
+    width: 70%;
+  }
+  body main section.foodSection div.addFood form div div.InputContainer {
+    margin-left: 2rem;
+  }
+  body main section.foodSection div.addFood form div div.InputContainer button.delete {
+    width: 10vw;
+  }
+  body section.signSection {
+    background-color: black;
+  }
+  body footer section.logo p {
+    display: none;
+  }
+}
+@keyframes animate {
+  from {
+    z-index: -1;
+    transform: translate(0%, -10%);
+    opacity: 0.4;
+  }
+  to {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+}
+@keyframes reverseAnimate {
+  from {
+    transform: translate(0%, 0%);
+    opacity: 1;
+  }
+  to {
+    transform: translate(0%, -20%);
+    opacity: 0;
+    z-index: -10;
+  }
+}
+@keyframes footerInAnimate {
+  from {
+    opacity: 0.4;
+    transform: translate(0%, 10%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0%, 0%);
+  }
+}
+@keyframes footerH1OutAnimate {
+  from {
+    transform: translate(0%, 40%);
+    scale: 40%;
+  }
+  to {
+    transform: translate(0%, 0%);
+    scale: 100%;
+  }
+}
+@keyframes footerH1OutAnimate {
+  from {
+    transform: translate(0%, 40%);
+    scale: 40%;
+  }
+  to {
+    transform: translate(0%, 0%);
+    scale: 100%;
+  }
+}
+@keyframes HeaderH1OutAnimate {
+  from {
+    transform: translate(0%, 0%);
+    scale: 100%;
+  }
+  to {
+    transform: translate(0%, 10%);
+    scale: 110%;
+  }
+}
+@keyframes HeaderH1InAnimate {
+  from {
+    transform: translate(0%, 10%);
+    scale: 110%;
+  }
+  to {
+    transform: translate(0%, 0%);
+    scale: 100%;
+  }
+}
+@keyframes authorClick {
+  from {
+    scale: 100%;
+  }
+  to {
+    scale: 110%;
+  }
+}
+@keyframes authorClickOut {
+  from {
+    scale: 110%;
+  }
+  to {
+    scale: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
